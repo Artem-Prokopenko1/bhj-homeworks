@@ -6,7 +6,7 @@ for (let i = 1; i <= 9; i++){
     arrHole.push(document.getElementById(`hole${i}`));
     
 }
-console.log(arrHole);
+
 for( let clickHole of arrHole){
     clickHole.onclick = () => {
         console.log(clickHole.className);
