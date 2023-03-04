@@ -9,3 +9,4 @@ arrPopup.forEach(item => {
 
 close.forEach(item => item.onclick = () => arrPopup.forEach(item => item.className = 'modal'));
 
+
