@@ -17,7 +17,9 @@ class Game {
   }
 
   registerEvents() {
+    this.currentSymbol.addEventlistener("keydown", this.success)
     /*
+
       TODO:
       Написать обработчик события, который откликается
       на каждый введённый символ.
