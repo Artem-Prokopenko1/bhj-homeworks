@@ -7,8 +7,7 @@ function nextElement(i, length){
     return i += 1;
 }
 function prewElement(i, length){
-    if (i === 0) return length - 1;
-    return i -= 1;
+    return (i === 0) ? length - 1 : i -= 1;
 }
 
 nextArrow.onclick = () =>{

@@ -19,8 +19,6 @@ class Game {
   registerEvents() {
     let buttonCheck = (event) => event.key === this.currentSymbol.textContent ? this.success() : this.fail();
     document.addEventListener("keydown", buttonCheck);
-   
-    
     /*
 
       TODO:
