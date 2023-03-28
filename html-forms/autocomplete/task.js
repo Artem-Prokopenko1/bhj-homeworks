@@ -67,8 +67,19 @@ class Autocomplete {
     this.list.innerHTML = html.join('');
   }
 
-  getMatches( text ) {
-    /*
+  getMatches( text ) {  
+  const arrSelect = [...this.input];
+  
+  let arr = arrSelect.map(item => {
+    let obj = {
+      text: item.textContent,
+      value: item.value
+    }
+   return obj; 
+  });
+  let resultArrSearch = arr.filter(item => item.text.includes(text));
+  return resultArrSearch;
+  /*
       TODO: этот метод нужно дописать
       text - фраза, которую вводят в поле поиска
       Метод должен вернуть массив.
@@ -81,13 +92,8 @@ class Autocomplete {
         value: 'Содержимое атрибута value'
       }
     */
-    return [
-      {
-        text: 'Чубакка',
-        value: '1'
-      }
-    ];
   }
+  
 }
 
 new Autocomplete( document.querySelector( '.autocomplete' ));
