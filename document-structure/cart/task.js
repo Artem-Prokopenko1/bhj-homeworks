@@ -33,19 +33,15 @@ products.forEach(item =>{
                 )
             }
 
-            if(cartsArr.length !== 0){
-                let existingCard = cartsArr.find(item => item.dataset.id === parrent.dataset.id);
-                if(existingCard){
-                    let itemCount = existingCard.querySelector(".cart__product-count");
-                    let counterCart = Number(itemCount.textContent);
-                    counterCart += counterProducts;
-                    itemCount.textContent = counterCart;
-                }else{
-                    insertCard();
-                }
+            let existingCard = cartsArr.find(item => item.dataset.id === parrent.dataset.id);
+            if(existingCard){
+                let itemCount = existingCard.querySelector(".cart__product-count");
+                let counterCart = Number(itemCount.textContent);
+                counterCart += counterProducts;
+                itemCount.textContent = counterCart;
             }else{
-            insertCard();
-            }   
+                insertCard();
+            }
         }
     })
 })

@@ -6,9 +6,10 @@ const tasksList = document.querySelector(".tasks__list");
 buttonTaskAdd.addEventListener("click", addTask);
 function addTask(event){
     event.preventDefault();
-    let text = taskInput.value;
+    let text = taskInput.value.trim();
     
-    if(text){ tasksList.insertAdjacentHTML("afterbegin",
+    if(text){ 
+        tasksList.insertAdjacentHTML("afterbegin",
         `<div class="task">
             <div class="task__title">
               ${text}
@@ -21,5 +22,7 @@ function addTask(event){
 
 tasksList.addEventListener("click", event => {
     let taskCloseClick = event.target;
-    taskCloseClick.parentNode.remove();
+    if(taskCloseClick.classList.contains("task__remove")){
+        taskCloseClick.parentNode.remove();
+    }
 })
